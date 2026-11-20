@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
   const assetRef = searchParams.get("asset_ref") || "";
   const pageNum = Math.max(1, parseInt(searchParams.get("page") || "1", 10) || 1);
   const totalPages = Math.max(1, parseInt(searchParams.get("total") || "26", 10) || 26);
-  const bookTitle = searchParams.get("book_title") || "RaysBook Digital Module";
+  const bookTitle = searchParams.get("book_title") || "Mind Spark Digital Module";
   const chapterTitle = searchParams.get("chapter_title") || "Chapter Study Notes";
   const rawPdf = searchParams.get("raw") === "1";
   const downloadPdf = searchParams.get("download") === "1";
@@ -113,7 +113,7 @@ export async function GET(request: NextRequest) {
   }
 
   if (rawPdf || downloadPdf) {
-    const safeName = chapterTitle.replace(/[^a-zA-Z0-9_-]/g, "_") || "RaysBook";
+    const safeName = chapterTitle.replace(/[^a-zA-Z0-9_-]/g, "_") || "MindSpark";
     const disposition = downloadPdf
       ? `attachment; filename="${safeName}_Page_${pageNum}.pdf"`
       : `inline; filename="${safeName}_Page_${pageNum}.pdf"`;
