@@ -50,7 +50,7 @@ export function generateEducationalPdfPage(options: {
   const currentTopic = topics[(pageNumber - 1) % topics.length];
 
   const lines: Array<{ y: number; size: number; bold?: boolean; color?: string; text: string }> = [
-    { y: 790, size: 9, bold: true, color: "0.34 0.33 0.84", text: `MIND SPARK DIGITAL EDITION  |  ${bookTitle.toUpperCase()}` },
+    { y: 790, size: 11, bold: true, color: "0.20 0.19 0.72", text: `MIND SPARK DIGITAL EDITION  |  ${bookTitle.toUpperCase()}` },
     { y: 766, size: 17, bold: true, color: "0.11 0.13 0.14", text: `${chapterTitle}` },
     { y: 746, size: 11, bold: true, color: "0.92 0.35 0.05", text: `Section ${pageNumber}.${(pageNumber % 4) + 1}: ${currentTopic}` },
     { y: 716, size: 11, bold: true, color: "0.11 0.13 0.14", text: "1. Core Theory & Key Principles" },
@@ -81,7 +81,7 @@ export function generateEducationalPdfPage(options: {
     { y: 198, size: 10, text: `Q${pageNumber}.2: If the characteristic parameter is doubled (2x), the output response scales by:` },
     { y: 182, size: 10, text: `      (A) 4x (Quadratic)    (B) 2x (Linear)    (C) 0.5x (Inverse)    (D) Remains unchanged` },
     { y: 162, size: 10, bold: true, color: "0.02 0.59 0.41", text: `Answer: (A) — Due to the square-law dependence established in Equation ${pageNumber}.1.` },
-    { y: 65, size: 9, color: "0.45 0.48 0.52", text: `Mind Spark Secure Reader  |  ${subject}  |  Page ${pageNumber} of ${totalPages}` },
+    { y: 65, size: 9, bold: true, color: "0.35 0.38 0.45", text: `MIND SPARK SECURE READER  |  ${subject}  |  Page ${pageNumber} of ${totalPages}` },
   ];
 
   const streamParts: string[] = [];
@@ -90,6 +90,16 @@ export function generateEducationalPdfPage(options: {
   streamParts.push("0.88 0.90 0.94 RG 1 w 28 45 539 768 re S");
   // Header accent bar
   streamParts.push("0.34 0.33 0.84 rg 28 803 539 10 re f");
+  // ── MIND SPARK diagonal watermark (drawn first so page content sits on top) ──
+  streamParts.push("q");
+  // 45° rotation matrix: cos sin -sin cos tx ty  (Helvetica-Bold, "MIND SPARK")
+  const wmMatrix = (tx: number, ty: number, size: number) =>
+    `BT /F2 ${size} Tf 0.7071 0.7071 -0.7071 0.7071 ${tx} ${ty} Tm (MIND SPARK) Tj ET`;
+  streamParts.push("0.78 0.77 0.93 rg");
+  streamParts.push(wmMatrix(55, 140, 56));
+  streamParts.push(wmMatrix(240, 340, 56));
+  streamParts.push(wmMatrix(55, 540, 56));
+  streamParts.push("Q");
   // Formula box background
   streamParts.push("0.94 0.96 1.00 rg 42 586 510 66 re f");
   streamParts.push("0.34 0.33 0.84 RG 1 w 42 586 510 66 re S");
