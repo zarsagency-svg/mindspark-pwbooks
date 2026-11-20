@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "RaysBook.live - Explore",
+  title: "Mind Spark - Explore",
   description:
     "Find all the books you need to succeed. Access NEET, IIT-JEE, NCERT, Udaan, Neev & UPSC Digital Modules with integrated Secure PDF Reader.",
 };

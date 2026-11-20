@@ -80,7 +80,7 @@ const SUPPORT_FAQS = [
   },
 ];
 
-export default function RaysBookApp() {
+export default function MindSparkApp() {
   // Navigation & View state
   const [activeNav, setActiveNav] = useState<"home" | "explore" | "passes" | "purchases">(
     "explore"
@@ -675,7 +675,7 @@ export default function RaysBookApp() {
               </svg>
             </div>
             <span className="font-extrabold text-[18px] text-[#1b2124] tracking-tight">
-              RaysBook.live
+              Mind Spark
             </span>
           </div>
           <button
@@ -883,12 +883,12 @@ export default function RaysBookApp() {
             className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 cursor-pointer transition"
           >
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-[#ef4444] text-white flex items-center justify-center font-bold text-sm">
-                R
+              <div className="w-8 h-8 rounded-full bg-[#5856d6] text-white flex items-center justify-center font-bold text-sm">
+                M
               </div>
               <div>
                 <div className="font-bold text-sm text-[#1b2124] leading-tight">
-                  RaysBook.live
+                  Mind Spark
                 </div>
                 <div className="text-[11px] font-semibold text-gray-500">
                   {COHORT_LIST.find((c) => c.slug === selectedCohort)?.label ||
@@ -1389,7 +1389,7 @@ export default function RaysBookApp() {
                       </button>
                       {openAccordion.digital && (
                         <div className="px-5 pb-4 pt-2 border-t border-gray-100 text-xs text-gray-600 leading-relaxed">
-                          Read online instantly in the RaysBook Secure Reader with
+                          Read online instantly in the Mind Spark Secure Reader with
                           high-DPI PDF.js canvas zoom, page-level sticky notes, colored
                           highlights, and interactive MCQ practice sets.
                         </div>
@@ -1832,7 +1832,7 @@ export default function RaysBookApp() {
                     </svg>
                   </button>
                   <h1 className="text-lg font-extrabold text-[#1b2124]">
-                    RaysBook.live
+                    Mind Spark
                   </h1>
                 </div>
 
@@ -1859,7 +1859,7 @@ export default function RaysBookApp() {
                   <button
                     onClick={() =>
                       triggerToast(
-                        "RaysBook.live Web App is ready for instant online & offline-cached reading!"
+                        "Mind Spark Web App is ready for instant online & offline-cached reading!"
                       )
                     }
                     className="hidden lg:flex items-center gap-1.5 text-sm font-bold text-[#1b2124] hover:text-[#5856d6] transition cursor-pointer"

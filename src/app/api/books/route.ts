@@ -49,7 +49,7 @@ export async function GET(request: NextRequest) {
           title: customBookRow.title,
           subTitle: customBookRow.subtitle || "Custom Uploaded Digital PDF Book",
           author: customBookRow.author,
-          publication: "RaysBook Custom Library",
+          publication: "Mind Spark Custom Library",
           publicationYear: "2026",
           edition: customBookRow.edition,
           displayClass: customBookRow.displayClass,
@@ -67,7 +67,7 @@ export async function GET(request: NextRequest) {
           faq: [
             {
               que: "How does this uploaded PDF book work?",
-              ans: "You can open any chapter or the full uploaded PDF directly in the RaysBook Secure Reader, zoom, jump pages, and add page notes or highlights.",
+              ans: "You can open any chapter or the full uploaded PDF directly in the Mind Spark Secure Reader, zoom, jump pages, and add page notes or highlights.",
             },
           ],
           knowMore: [
@@ -164,7 +164,7 @@ export async function GET(request: NextRequest) {
         faq: [
           {
             que: "What happens when I buy the Digital format?",
-            ans: "Once your purchase is successful, you get access to an interactive version of your book inside RaysBook.live.",
+            ans: "Once your purchase is successful, you get access to an interactive version of your book inside Mind Spark.",
           },
           {
             que: "How do I access my digital book?",

@@ -685,7 +685,7 @@ export async function fetchBookDetailFromUpstream(bookId: string): Promise<BookD
             : [
                 {
                   que: "What happens when I unlock or open the Digital format?",
-                  ans: "You get instant access to the interactive PDF version of your book inside RaysBook.live Secure Reader with page notes, highlights, and practice sets.",
+                  ans: "You get instant access to the interactive PDF version of your book inside Mind Spark Secure Reader with page notes, highlights, and practice sets.",
                 },
                 {
                   que: "How do I access my saved or purchased digital books?",
