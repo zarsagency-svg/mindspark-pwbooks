@@ -26,3 +26,8 @@ Thumbs.db
 # misc
 *.tsbuildinfo
 next-env.d.ts
+
+# cloudflare / opennext build output
+.open-next/
+.wrangler/
+.dev.vars*
